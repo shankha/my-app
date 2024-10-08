@@ -3,6 +3,8 @@ node{
     git 'https://github.com/shankha/my-app'
   }
   stage('compile package'){
-    sh 'mvn build'
+    //get mvn home path
+    def mvn_home = tool name: 'Maven-3', type: 'maven'
+    sh "$(mvn_home}/bin/mvn package"    
  }
 }
