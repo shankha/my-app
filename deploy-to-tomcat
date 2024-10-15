@@ -1,9 +1,9 @@
 node{
-   def tomcatIp = '172.31.14.131'
+   def tomcatIp = '172.31.36.82'
    def tomcatUser = 'ec2-user'
-   def stopTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/tomcat8/bin/shutdown.sh"
-   def startTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/tomcat8/bin/startup.sh"
-   def copyWar = "scp -o StrictHostKeyChecking=no target/myweb.war ${tomcatUser}@${tomcatIp}:/opt/tomcat8/webapps/"
+   def stopTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/apache-tomcat-9.0.96/bin/shutdown.sh"
+   def startTomcat = "ssh ${tomcatUser}@${tomcatIp} /opt/apache-tomcat-9.0.96/bin/startup.sh"
+   def copyWar = "scp -o StrictHostKeyChecking=no target/myweb.war ${tomcatUser}@${tomcatIp}:/opt/apache-tomcat-9.0.96/webapps"
    stage('SCM Checkout'){
         git branch: 'master', 
 	        credentialsId: 'javahometech',
